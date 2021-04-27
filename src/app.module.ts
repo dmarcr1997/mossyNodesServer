@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { ProjectsController } from './projects/projects.controller';
 import { CourseworkController } from './coursework/coursework.controller';
 import { AdminController } from './admin/admin.controller';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [],
+  imports: [MongooseModule.forRoot('mongodb://CPdb/nest')],
   controllers: [AppController, ProjectsController, CourseworkController, AdminController],
   providers: [AppService],
 })
